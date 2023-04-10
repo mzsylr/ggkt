@@ -49,9 +49,8 @@ public class SubjectServiceImpl extends ServiceImpl<SubjectMapper, Subject> impl
         QueryWrapper<Subject> wrapper = new QueryWrapper<>();
         wrapper.eq("parent_id",id);
         Integer count = baseMapper.selectCount(wrapper);
-        return count>0;
+        return count > 0;
     }
-
 //    //这里我的优化思路是利用stream流结合sql语句进行优化
 //    //1.首先还是查询出list集合
 //    List<ProjectUser> projectList = projectUserDao.selectByProjectId(projectId);
@@ -75,8 +74,6 @@ public class SubjectServiceImpl extends ServiceImpl<SubjectMapper, Subject> impl
 //    }
 //    userInfoVO.setProjectId(projectId);
 //    userInfoVO.setUserInfoList(userInfoList);
-
-
 
     @Override
     public void exportData(HttpServletResponse response) {
